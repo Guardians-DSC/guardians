@@ -1,0 +1,13 @@
+:root {
+    --light-blue: #328FAC;
+    --dark-blue: #0D548B;
+    --light-gray: #F5F5F5;
+    --dark-gray: #E8E8E8;
+    --white: #FFFFFF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+}
