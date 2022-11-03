@@ -9,7 +9,8 @@
             "buttons": {
                 "principal": "Sobre nós",
                 "secundary": "Artigos "
-            }
+            },
+            "seeMore": "Ver mais"
         }
     }
 }
