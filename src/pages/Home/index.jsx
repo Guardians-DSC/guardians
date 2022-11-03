@@ -1,24 +1,20 @@
-import { Content, Wrapper, Title, Code, WrapperButtons, WrapperIcons, Blink} from "./styles";
+import { Content, Wrapper, Title, Code, WrapperButtons, WrapperIcons, Blink, Image, Container} from "./styles";
 import { Trans, useTranslation } from 'react-i18next';
-import { AiOutlineInstagram, AiFillLinkedin, AiOutlineGithub } from "react-icons/ai";
-import { useNavigate} from 'react-router-dom';
+import MobileImage from '@/assets/img/homeMobile.svg'
+import SeeMore from '@components/SeeMore'
+import RedesSociais from '@components/RedesSociais'
+import Button from '@components/Button'
+
 
 const Home = () => {
 
     const { t } = useTranslation();
 
-    const navigate = useNavigate();
-
-    const navigateToAbout = () => {
-        navigate('/about')
-    }
-
-    const navigateToArticles = () => {
-        navigate('/articles')
-    }
-
     return (
         <Content>
+            <Image>
+                <img src={MobileImage} />
+            </Image>
             <Wrapper>
                 <Code>{ t('home.upperText')}</Code>
                 <Title>
@@ -27,8 +23,8 @@ const Home = () => {
                 </Title>
 
                 <WrapperButtons>
-                    <button
-                        onClick={navigateToAbout}
+                    <Button
+                        link={'about'}
                         style={{ 
                             backgroundColor: "#0D548B", 
                             borderRadius: "20px 0 0 0", 
@@ -36,11 +32,12 @@ const Home = () => {
                             width: "160px",
                             height: "42px",
                             border: "0"
-                        }}>
-                        { t('home.buttons.principal')}
-                    </button>
-                    <button
-                        onClick={navigateToArticles}
+                        }}
+                        text={t('home.buttons.principal')}
+                    />
+
+                    <Button
+                        link={'articles'}
                         style={{ 
                             border: "3",
                             borderColor: "#328FAC",
@@ -50,23 +47,20 @@ const Home = () => {
                             width: "160px",
                             height: "42px"
                         }}
-                    >
-                        { t('home.buttons.secundary')}
-                    </button>
+                        text={ t('home.buttons.secundary')}
+                    />
                 </WrapperButtons>
-
                 <WrapperIcons>
-                        <a href="https://www.instagram.com/guardiansufcg/" style={{ color: "#328FAC"}} target="_blank">
-                            <AiOutlineInstagram/>   
-                        </a>
-                        <a href="https://www.linkedin.com/company/guardians-ufcg" style={{ color: "#328FAC"}} target="_blank">
-                            <AiFillLinkedin/>  
-                        </a>
-                        <a href="https://github.com/Guardians-DSC" style={{ color: "#328FAC"}} target="_blank">
-                            <AiOutlineGithub/>
-                        </a>
+                    <RedesSociais
+                        instagramUrl={'https://www.instagram.com/guardiansufcg/'}
+                        linkedinUrl={'https://www.linkedin.com/company/guardians-ufcg'}
+                        githubUrl={'https://github.com/Guardians-DSC'}
+                    />
                 </WrapperIcons>
             </Wrapper>
+            <Container>
+                <SeeMore/>
+            </Container>
         </Content>
     )
 }
