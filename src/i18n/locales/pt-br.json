@@ -1,0 +1,16 @@
+{
+    "translations": {
+        "lang": "PT-BR",
+        "lang_name": "Português",
+        "home": {
+            "title": "SEJA BEM VIND@ <br> AO SITE DOS <br> GUARDIANS!",
+            "blinkBar": "|",
+            "upperText": "[guardians@lcc-ufcg~]$",
+            "buttons": {
+                "principal": "Sobre nós",
+                "secundary": "Artigos "
+            },
+            "seeMore": "Ver mais"
+        }
+    }
+}
